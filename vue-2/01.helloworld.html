@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>动态组件</title>
+    <script src="https://cdn.bootcss.com/vue/2.4.4/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <input type="button" @click="stark='hello'" value="hello组件"/>
+        <input type="button" @click="stark='oll'" value="oll组件"/>
+        <component v-bind:is='stark'>
+        	
+        </component>
+    </div>
+
+</body>
+<script>
+    let vm = new Vue({
+        el: "#app",
+        data: {
+            stark: 'hello'
+        },
+        components:{
+        	'hello':{
+        		template:'<div>我是hello</div>'
+        	},
+        	'oll':{
+        		template:'<div>我是oll</div>'
+        	}
+        }
+    })
+
+    vm.name = "shudong";
+</script>
+
+</html>

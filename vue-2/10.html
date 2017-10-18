@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>顾虑器</title>
+    <script src="https://cdn.bootcss.com/vue/2.4.4/vue.js"></script>
+    <script src="https://cdn.bootcss.com/vue-resource/1.3.4/vue-resource.min.js"></script>
+</head>
+
+<body>
+    <div id="app">
+       githup:Id :,<input type="text" v-model="uid"/>
+       <button @click="getUser(uid)">获取指定的gitup账号信息</button>
+    </div>
+
+</body>
+<script>
+    
+        let vm = new Vue({
+        	el:'#app',
+        	data:{
+        		use :{},
+        		uid:''
+        	},
+        	methods:{
+        		getGitUse:function(){
+        			this.$http.get(`https://api.githup.com/user/${$uid}`)
+        				.then()
+        		}
+        	}
+        })
+</script>
+
+</html>

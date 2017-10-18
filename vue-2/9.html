@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>顾虑器</title>
+    <script src="https://cdn.bootcss.com/vue/2.4.4/vue.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <style>
+    	#app div{
+    		width: 50px;
+    		height: 50px;
+    		position: absolute;
+    	}
+    	#app .hello{
+    		background: red;
+    		top: 0;
+    		left: 0;
+    	}
+    	#app .world{
+    		background: blue;
+    		top: 0;
+    		left: 0;
+    	}
+    </style>
+</head>
+
+<body>
+    <div id="app">
+       <div class="hello" v-drag>
+       	
+       </div>
+       <div class="world">
+       	
+       </div>
+    </div>
+
+</body>
+<script>
+    Vue.directive('drag',function(el){
+    	
+    		el.onmousedown = function(e){
+				
+				var divX = e.clientX - el.offsetLeft;
+				var divY = e.clientY - el.offsetTop;
+				
+				document.onmousemove = function(e){
+					el.style.left = e.clientX-divX+'px';
+					el.style.top = e.clientX-divY+'px';
+				}
+				document.onmouseup=function(){
+					document.onmousemove = null;
+					document.onmouseup = null;
+				}
+			}
+    	
+    })
+        
+        let vm = new Vue({
+        	el:'#app',
+        })
+</script>
+
+</html>

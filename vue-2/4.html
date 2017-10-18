@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/vue/2.4.4/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        {{a}}</br>
+        {{b}}
+        {{obj.name}}
+    </div>
+
+</body>
+<script>
+    let vm = new Vue({
+        el: "#app",
+        data: {
+            stark: 'guo',
+            a:1111,
+            b:2222,
+            obj:{
+            	name:'stark',
+            	age:18
+            }
+        }
+    })
+	vm.$watch('obj',function(){
+		alert('名字变了'+this.obj.name);
+		//this.b = this.a +100
+	})
+	document.onclick = function(){
+		vm.obj.name = 'guo';
+	}
+</script>
+
+</html>
