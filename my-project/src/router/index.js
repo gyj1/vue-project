@@ -4,6 +4,9 @@ import Hello from '@/components/Hello'
 import Work from '@/components/Work'
 import Stark from '@/components/Stark'
 import User from '@/components/User'
+import Hero from '@/views/hero'
+import Daily from '@/views/daily'
+import Increament from '@/components/Increament-1'
 
 Vue.use(Router)
 const UserProfile = { template: `<div> 我是profile 组件 </div>` };
@@ -28,6 +31,21 @@ export default new Router({
       path: '/',
       name: 'Hello',
       component: Hello
+    },
+    {
+      path: '/increament',
+      name: 'Increament',
+      component: Increament
+    },
+    {
+      path: '/hero',
+      name: 'Hero',
+      component: Hero
+    },
+    {
+      path: '/daily',
+      name: 'daily',
+      component: Daily
     },
     {
       path: '/work',
@@ -87,3 +105,4 @@ export default new Router({
     }
   ]
 })
+

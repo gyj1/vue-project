@@ -58,7 +58,7 @@
                         return item.id == id;
                     })[0]
                 }
-                console.log(this.userInfo);
+                //console.log(this.userInfo);
                 // console.log(this.$route.params.stark);
             }
         }
